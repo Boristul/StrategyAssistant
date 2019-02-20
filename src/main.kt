@@ -3,6 +3,9 @@ fun main(args: Array<String>) {
     var winStratCount = 0
     var lossStratCount = 0
 
+    var st = SingleStrategy(10000.0, 3.2)
+
+//    print(st.countOfLoses(2.0))
 
     for (i in 1..100) {
 
@@ -14,12 +17,12 @@ fun main(args: Array<String>) {
 
         if (!st.statusStrat) {
             lossStratCount++
-//        println("you lost!")
-//        st.printStat()
+        println("you lost!")
+        st.printStat()
         } else {
             winStratCount++
-//        println("you win!")
-//        st.printStat()
+        println("you win!")
+        st.printStat()
         }
     }
 

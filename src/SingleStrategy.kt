@@ -33,7 +33,6 @@ class SingleStrategy (var singleBank: Double, var percent: Double, var currentWi
         else
         {
             if (getBidAmount(coefficient, currentWinAmount) > singleBank) {
-             println("Loss Strategy")
                 statusStrat = false
                 return false
             }
@@ -49,4 +48,17 @@ class SingleStrategy (var singleBank: Double, var percent: Double, var currentWi
     {
         println("Bank: $singleBank, debt: $currentWinAmount, win: $winCount, loss: $lossCount, total: ${winCount + lossCount}")
     }
+
+    fun countOfLoses(coefficient: Double): Int
+    {
+        var countOfLose = 0
+
+        while (simulateBid(coefficient, false))
+        {
+            countOfLose ++
+        }
+
+        return countOfLose
+    }
+
 }
